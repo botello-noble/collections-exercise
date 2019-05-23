@@ -39,30 +39,65 @@ public class GroceryApp {
         grocery.put("carbs", carbs);
 
 
-        System.out.println("Would you like to create a grocery list?");
-        if(input.yesNo()){
-            System.out.println("Please select a category");
-            for (String key : grocery.keySet()) {
-                System.out.format(" ["+key+"] \n");
+        String userInput = "";
+        int userNumber = 0;
+        HashMap<Integer, Items> listItems = new HashMap<>();
+        int t = 0;
+        String finalAnswer = "no";
+
+
+        do {
+            System.out.println("Would you like to add an item to a grocery list?");
+            if (input.yesNo()) {
+                System.out.println("Please select a category");
+                for (String key : grocery.keySet()) {
+                    System.out.format(" [" + key + "] \n");
+                }
+                String userCategory = scanner.nextLine();
+                if (userCategory.equals("produce")) {
+                    for (Object produceList : produce.getGroceries()) {
+                        System.out.println(produceList);
+                    }
+                    System.out.println("Please select your produce.");
+                    userInput = scanner.nextLine();
+                    System.out.printf("How many %s?", userInput);
+                    userNumber = scanner.nextInt();
+                } else if (userCategory.equals("meat")) {
+                    for (Object meatList : meat.getGroceries()) {
+                        System.out.println(meatList);
+                    }
+                    System.out.println("Please select your meat.");
+                    userInput = scanner.nextLine();
+                    System.out.printf("How many %s?", userInput);
+                    userNumber = scanner.nextInt();
+                } else if (userCategory.equals("spices")) {
+                    for (Object spiceList : spices.getGroceries()) {
+                        System.out.println(spiceList);
+                    }
+                    System.out.println("Please select your spices.");
+                    userInput = scanner.nextLine();
+                    System.out.printf("How many %s?", userInput);
+                    userNumber = scanner.nextInt();
+                } else if (userCategory.equals("carbs")) {
+                    for (Object carbsList : carbs.getGroceries()) {
+                        System.out.println(carbsList);
+                    }
+                    System.out.println("Please select your carbs.");
+                    userInput = scanner.nextLine();
+                    System.out.printf("How many %s?", userInput);
+                    userNumber = scanner.nextInt();
+                }
+                Items userIn = new Items(userCategory, userInput, userNumber);
+                listItems.put(t, userIn);
             }
-            String answer = scanner.nextLine();
-            if(answer.equals("produce")){
-                for(Object produceList : produce.getGroceries() ){
-                    System.out.println(produceList);
-                }
-            } else if (answer.equals("meat")){
-                for(Object meatList : meat.getGroceries()){
-                    System.out.println(meatList);
-                }
-            } else if (answer.equals("spices")){
-                for(Object spiceList : spices.getGroceries()){
-                    System.out.println(spiceList);
-                }
-            } else if (answer.equals("carbs")){
-                for(Object carbsList : carbs.getGroceries()){
-                    System.out.println(carbsList);
-                }
-            }
+            String x = scanner.nextLine();
+            t++;
+            System.out.println("Would you like to finalize your order? yes or no");
+            finalAnswer = scanner.nextLine();
+        } while(finalAnswer.equals("no"));
+
+        for (Integer key : listItems.keySet()) {
+            System.out.format(" [" + listItems.get(key).getGroceryItem() + "] \n");
         }
     }
 

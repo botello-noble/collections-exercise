@@ -17,7 +17,7 @@ public class Input {
     }
 
     public boolean yesNo(){
-        String input = getString("Type yes/no: ");
+        String input = scanner.nextLine();
         return input.equals("yes") || input.equals("y");
     }
 

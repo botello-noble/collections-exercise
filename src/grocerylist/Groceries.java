@@ -12,6 +12,9 @@ public class Groceries {
         this.categories = categories;
         this.groceries = new ArrayList<>();
     }
+    public  ArrayList getGroceries(){
+        return this.groceries;
+    }
 
     public String getCategories() {
         return categories;

@@ -28,23 +28,20 @@ public class Student {
         double numberOfGrades = grades.size();
         for (int i = 0; i < grades.size(); i++) {
             totalGrades += grades.get(i);
-            System.out.println(totalGrades);
 
         }
         return totalGrades/ numberOfGrades;
     }
-
-    public static void main(String[] args) {
-
-        Student one = new Student("David" );
-
-        one.addGrade(50);
-        one.addGrade(100);
-        System.out.println(one.getGradeAverage());
-
-
-    }
-
+//
+//    public static void main(String[] args) {
+//        Student one = new Student("David" );
+//
+//        one.addGrade(50);
+//        one.addGrade(100);
+//        System.out.println(one.getGradeAverage());
+//
+//    }
+//
 
 
 }

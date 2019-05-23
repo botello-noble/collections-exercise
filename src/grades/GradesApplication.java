@@ -49,11 +49,33 @@ public class GradesApplication {
             System.out.format(" ["+key+"] \n");
         }
 
-        System.out.println("What student would you like to see more information on?");
+//        System.out.println("What student would you like to see more information on?");
+//
+//        String userMoreInfo = scanner.nextLine();
 
-        scanner.nextLine();
+        String userAnswerToKeepGoing = "yes";
+        do {
+            System.out.println("What student would you like to see more information on?");
 
-
+            String userMoreInfo = scanner.nextLine();
+            if(userMoreInfo.equals("ryanorsinger")){
+                System.out.println("Name: " + ryan.getName() + " - Github UserName: "
+                + "[ryanorsinger]" + "Current Avg: " + ryan.getGradeAverage());
+            } else if(userMoreInfo.equals("dereknoble")){
+                System.out.println("Name: " + derek.getName() + " - Github UserName: "
+                        + "[dereknoble]" + "Current Avg: " + derek.getGradeAverage());
+            } else if(userMoreInfo.equals("nadbot")){
+                System.out.println("Name: " + nadia.getName() + " - Github UserName: "
+                        + "[nadbot]" + "Current Avg: " + nadia.getGradeAverage());
+            } else if(userMoreInfo.equals("alexandrafossum")){
+                System.out.println("Name: " + alexandra.getName() + " - Github UserName: "
+                        + "[alexandrafossum]" + "Current Avg: " + alexandra.getGradeAverage());
+            } else {
+                System.out.printf("Sorry no student found with %s as a username", userMoreInfo);
+            }
+            System.out.println("Would you like to continue? yes or no");
+                userAnswerToKeepGoing = scanner.nextLine();
+        } while( userAnswerToKeepGoing.equals("yes"));
 
 
 

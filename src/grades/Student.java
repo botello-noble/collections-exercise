@@ -35,7 +35,7 @@ public class Student {
 
     public static void main(String[] args) {
 
-        Student one = new Student("David", 80, 90);
+        Student one = new Student("David", 80, 90, 90);
 
 
     }

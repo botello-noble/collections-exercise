@@ -7,11 +7,11 @@ public class Student {
 
     private String name;
 
-    private ArrayList<Integer> grades = new ArrayList<>();
+    private ArrayList<Integer> grades;
 
-    public Student(String name, ArrayList<Integer> grades) {
+    public Student(String name) {
         this.name = name;
-        this.grades = grades;
+        this.grades = new ArrayList<>();
     }
 
     public String getName() {
@@ -25,17 +25,23 @@ public class Student {
 
     // returns the average of the students grades
     public double getGradeAverage(){
+        double totalGrades = 0;
+        double numberOfGrades = grades.size();
+        for (int i = 0; i < grades.size(); i++) {
+            totalGrades += grades.get(i);
+            System.out.println(totalGrades);
 
-        for (int i = 1; i <= grades.size(); i++) {
-            return grades.get(i) / i;
         }
-
-        return 1;
+        return totalGrades/ numberOfGrades;
     }
 
     public static void main(String[] args) {
 
-        Student one = new Student("David", 80, 90, 90);
+        Student one = new Student("David" );
+
+        one.addGrade(50);
+        one.addGrade(100);
+        System.out.println(one.getGradeAverage());
 
 
     }

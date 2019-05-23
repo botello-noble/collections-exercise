@@ -60,7 +60,7 @@ public class GroceryApp {
                     }
                     System.out.println("Please select your produce.");
                     userInput = scanner.nextLine();
-                    System.out.printf("How many %s?", userInput);
+                    System.out.printf("How much %s?", userInput);
                     userNumber = scanner.nextInt();
                 } else if (userCategory.equals("meat")) {
                     for (Object meatList : meat.getGroceries()) {
@@ -68,7 +68,7 @@ public class GroceryApp {
                     }
                     System.out.println("Please select your meat.");
                     userInput = scanner.nextLine();
-                    System.out.printf("How many %s?", userInput);
+                    System.out.printf("How many %ss?", userInput);
                     userNumber = scanner.nextInt();
                 } else if (userCategory.equals("spices")) {
                     for (Object spiceList : spices.getGroceries()) {
@@ -76,7 +76,7 @@ public class GroceryApp {
                     }
                     System.out.println("Please select your spices.");
                     userInput = scanner.nextLine();
-                    System.out.printf("How many %s?", userInput);
+                    System.out.printf("How many bottles of %s?", userInput);
                     userNumber = scanner.nextInt();
                 } else if (userCategory.equals("carbs")) {
                     for (Object carbsList : carbs.getGroceries()) {

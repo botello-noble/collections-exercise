@@ -1,4 +1,5 @@
 package grocerylist;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
 public class GroceryApp {
@@ -95,10 +96,18 @@ public class GroceryApp {
             System.out.println("Would you like to finalize your order? yes or no");
             finalAnswer = scanner.nextLine();
         } while(finalAnswer.equals("no"));
-
+        String[] arrayMeat = {};
         for (Integer key : listItems.keySet()) {
             System.out.format(" [" + listItems.get(key).getGroceryItem() + "] \n");
+            if(listItems.get(key).getItem().equals("meat")){
+                arrayMeat = Arrays.copyOf(arrayMeat, arrayMeat.length + 1);
+
+                arrayMeat[arrayMeat.length - 1 ] = listItems.get(key).getGroceryItem();
+
+            }
+
         }
+
     }
 
 }

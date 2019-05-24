@@ -16,6 +16,10 @@ public class Items {
         return String.format(groceryItem + ": " + category + " | number of items: "  + numberOfItem);
     }
 
+    public String getItem(){
+        return groceryItem;
+    }
+
     public String getCategory() {
         return category;
     }

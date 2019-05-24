@@ -97,10 +97,10 @@ public class GroceryApp {
             finalAnswer = scanner.nextLine();
         } while(finalAnswer.equals("no"));
 
-        String[] arrayMeat = {};
-        String[] arrayProduce = {};
-        String[] arrayCarbs = {};
-        String[] arraySpices = {};
+        String[] arrayMeat = new String[0];
+        String[] arrayProduce = new String[0];
+        String[] arrayCarbs = new String[0];
+        String[] arraySpices = new String[0];
 
         for (Integer key : listItems.keySet()) {
             System.out.format(" [" + listItems.get(key).getGroceryItem() + "] \n");
@@ -109,7 +109,7 @@ public class GroceryApp {
 
                 arrayMeat[arrayMeat.length - 1 ] = listItems.get(key).getGroceryItem();
 
-//                Arrays.sort(arrayMeat);
+                Arrays.sort(arrayMeat);
 
 
             } else if(listItems.get(key).getItem().equals("produce")){

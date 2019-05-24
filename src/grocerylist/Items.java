@@ -13,7 +13,8 @@ public class Items {
     }
 
     public String getGroceryItem() {
-        return String.format(groceryItem + ": " + category + " | number of items: "  + numberOfItem);
+//        return String.format(groceryItem + ": " + category + " | number of items: "  + numberOfItem);
+        return String.format(category + ": " + groceryItem + " | number of items: "  + numberOfItem);
     }
 
     public String getItem(){

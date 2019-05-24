@@ -15,16 +15,16 @@ public class GroceryApp {
     produce.addGrocery("bell pepper");
 
     Groceries meat = new Groceries("meat");
-    meat.addGrocery("Chicken Breast");
-    meat.addGrocery("Pork Chop");
+    meat.addGrocery("chicken breast");
+    meat.addGrocery("pork chop");
     meat.addGrocery("sirloin");
     meat.addGrocery("bacon");
 
     Groceries spices = new Groceries("spices");
-    spices.addGrocery("Cumin");
-    spices.addGrocery("Paprika");
-    spices.addGrocery("Garlic Salt");
-    spices.addGrocery("Cayenne");
+    spices.addGrocery("cumin");
+    spices.addGrocery("paprika");
+    spices.addGrocery("garlic salt");
+    spices.addGrocery("cayenne");
 
     Groceries carbs = new Groceries("carbs");
     carbs.addGrocery("bread");
@@ -96,7 +96,12 @@ public class GroceryApp {
             System.out.println("Would you like to finalize your order? yes or no");
             finalAnswer = scanner.nextLine();
         } while(finalAnswer.equals("no"));
+
         String[] arrayMeat = {};
+        String[] arrayProduce = {};
+        String[] arrayCarbs = {};
+        String[] arraySpices = {};
+
         for (Integer key : listItems.keySet()) {
             System.out.format(" [" + listItems.get(key).getGroceryItem() + "] \n");
             if(listItems.get(key).getItem().equals("meat")){
@@ -104,9 +109,40 @@ public class GroceryApp {
 
                 arrayMeat[arrayMeat.length - 1 ] = listItems.get(key).getGroceryItem();
 
+//                Arrays.sort(arrayMeat);
+
+
+            } else if(listItems.get(key).getItem().equals("produce")){
+                arrayProduce = Arrays.copyOf(arrayProduce, arrayProduce.length + 1);
+
+                arrayProduce[arrayProduce.length - 1 ] = listItems.get(key).getGroceryItem();
+//
+//                Arrays.sort(arrayProduce);
+
+
+            } else if(listItems.get(key).getItem().equals("carbs")){
+                arrayCarbs = Arrays.copyOf(arrayCarbs, arrayCarbs.length + 1);
+
+                arrayCarbs[arrayCarbs.length - 1 ] = listItems.get(key).getGroceryItem();
+
+//                Arrays.sort(arrayCarbs);
+
+            } else if(listItems.get(key).getItem().equals("spices")){
+                arraySpices = Arrays.copyOf(arraySpices, arraySpices.length + 1);
+
+                arraySpices[arraySpices.length - 1 ] = listItems.get(key).getGroceryItem();
+
+//                Arrays.sort(arraySpices);
+
             }
 
+
         }
+
+        Arrays.sort(arrayMeat);
+        Arrays.sort(arrayProduce);
+        Arrays.sort(arrayCarbs);
+        Arrays.sort(arraySpices);
 
     }
 
